@@ -6,6 +6,7 @@
 var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
+  , instagram = require('./routes/instagram')
   , http = require('http')
   , path = require('path');
 
@@ -30,6 +31,9 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/users', user.list);
+
+app.get('/instagram', instagram.instagram);
+app.get('/instagram/', instagram.instagram);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
