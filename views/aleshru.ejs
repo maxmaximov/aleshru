@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+      <% if (tag) {%>
+      <h1>#<%= tag %></h1>
+      <% } %>
+
+      <% for (var i = 0, l = images.length; i < l; i++) {%>
+      <% if (images[i] && images[i]["images"] && (!tag || (images[i]["tags"].length && ~images[i]["tags"].indexOf(tag)))) {%>
+      <img src="<%= images[i]["images"]["thumbnail"]["url"] %>"/></div>
+      <% } %>
+      <% } %>
+  </body>
+</html>

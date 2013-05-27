@@ -1,3 +1,5 @@
 node_modules
 access_token
 log
+cache
+public/stylesheets/style.css
