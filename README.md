@@ -1,9 +1,9 @@
-npm install
-npm start
+* npm install
+* npm start
 
-http://localhost:3000/auth/
+* http://localhost:3000/auth/
 
-node get
+* node get
 
 http://localhost:3000/aleshru/митянадиете/
-http://localhost:3000/aleshru/aleshruinstagram//
+http://localhost:3000/aleshru/aleshruinstagram/
