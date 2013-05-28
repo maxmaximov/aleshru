@@ -1,11 +1,11 @@
 var fs = require('fs');
 var request = require('request');
 
-exports.instagram = function(req, res){
+exports.auth = function(req, res){
     var accessTokenFileName = "./access_token";
     var clientId = "9382f93607cb4eae8e6b5aa80f305ca2";
     var clientSecret = "e148e5cea82645b082ff68cf02ffebbd";
-    var redirectUrl = "http://82.196.4.108:3000/instagram/";
+    var redirectUrl = "http://82.196.4.108:3000/auth/";
 
     var authorizationCode = req.query["code"];
     var accessToken;
@@ -37,7 +37,7 @@ exports.instagram = function(req, res){
                     }
                 });
 
-                res.redirect("/instagram/");
+                res.redirect("/auth/");
             }
         });
 
@@ -51,7 +51,7 @@ exports.instagram = function(req, res){
                 res.redirect("https://api.instagram.com/oauth/authorize/?client_id=" + clientId + "&redirect_uri=" + encodeURIComponent(redirectUrl) + "&response_type=code");
             } else {
                 console.log("Got it! " + accessToken);
-                res.render("instagram", { "img": data["user"]["profile_picture"] });
+                res.render("auth", { "img": data["user"]["profile_picture"] });
             }
         });
     }

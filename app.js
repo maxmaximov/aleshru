@@ -5,7 +5,7 @@
 
 var express = require('express')
   , routes = require('./routes')
-  , instagram = require('./routes/instagram')
+  , auth = require('./routes/auth')
   , aleshru = require('./routes/aleshru')
   , http = require('http')
   , path = require('path');
@@ -31,8 +31,8 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 
-app.get('/instagram', instagram.instagram);
-app.get('/instagram/', instagram.instagram);
+app.get('/auth', auth.auth);
+app.get('/auth/', auth.auth);
 
 app.get('/aleshru', aleshru.aleshru);
 app.get('/aleshru/', aleshru.aleshru);
