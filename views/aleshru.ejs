@@ -9,9 +9,7 @@
       <% } %>
 
       <% for (var i = 0, l = images.length; i < l; i++) {%>
-      <% if (images[i] && images[i]["images"] && (!tag || (images[i]["tags"].length && ~images[i]["tags"].indexOf(tag)))) {%>
       <img src="<%= images[i]["images"]["thumbnail"]["url"] %>"/></div>
-      <% } %>
       <% } %>
   </body>
 </html>

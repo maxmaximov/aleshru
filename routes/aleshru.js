@@ -2,6 +2,7 @@ var fs = require("fs");
 var request = require("request");
 
 exports.aleshru = function (req, res){
+    var json = /^\/json\//.test(req.path);
     var userId = 23641860;
     //var userId = 965487;
     var cacheFileName = "./cache/" + userId + ".json";
@@ -13,8 +14,22 @@ exports.aleshru = function (req, res){
             console.log(error);
         } else {
             images = data ? JSON.parse(data) : [];
-            console.log(images.length);
-            res.render("aleshru", { "images": images, "tag": tag });
+
+            images = images.filter(function (item) {
+                return item && item["images"];
+            });
+
+            if (tag) {
+                images = images.filter(function (item) {
+                    return item["tags"].length && ~item["tags"].indexOf(tag);
+                });
+            }
+
+            if (json) {
+                res.send(images);
+            } else {
+                res.render("aleshru", { "images": images, "tag": tag });
+            }
         }
     });
 };
