@@ -5,7 +5,6 @@
 
 var express = require('express')
   , routes = require('./routes')
-  , user = require('./routes/user')
   , instagram = require('./routes/instagram')
   , aleshru = require('./routes/aleshru')
   , http = require('http')
@@ -31,7 +30,6 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-//app.get('/users', user.list);
 
 app.get('/instagram', instagram.instagram);
 app.get('/instagram/', instagram.instagram);
