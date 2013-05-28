@@ -13,5 +13,5 @@
 
 Наслаждаемся результатом
 ------------------------
-http://localhost:3000/aleshru/митянадиете/
-http://localhost:3000/aleshru/aleshruinstagram/
+* http://localhost:3000/aleshru/митянадиете/
+* http://localhost:3000/aleshru/aleshruinstagram/
