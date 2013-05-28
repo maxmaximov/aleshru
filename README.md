@@ -1,6 +1,10 @@
+Устанавливаем и запускаем
+=========================
 * npm install
 * npm start
 
+Авторизуемся в Instagram
+=========================
 * http://localhost:3000/auth/
 
 * node get
