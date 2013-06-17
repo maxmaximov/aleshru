@@ -40,6 +40,8 @@ app.get("/aleshru/:tag", aleshru.aleshru);
 app.get("/aleshru/:tag/", aleshru.aleshru);
 app.get("/json/:tag", aleshru.aleshru);
 app.get("/json/:tag/", aleshru.aleshru);
+app.get("/xml/:tag", aleshru.aleshru);
+app.get("/xml/:tag/", aleshru.aleshru);
 
 http.createServer(app).listen(app.get("port"), function(){
   console.log("Express server listening on port " + app.get("port"));

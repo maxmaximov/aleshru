@@ -11,6 +11,7 @@
     "express": "3.2.5",
     "ejs": "*",
     "less-middleware": "*",
-    "request": "~2.21.0"
+    "request": "~2.21.0",
+    "jsontoxml": "0.0.9"
   }
 }

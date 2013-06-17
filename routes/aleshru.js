@@ -1,8 +1,10 @@
 var fs = require("fs");
 var request = require("request");
+var jsonxml = require("jsontoxml");
 
 exports.aleshru = function (req, res){
     var json = /^\/json\//.test(req.path);
+    var xml = /^\/xml\//.test(req.path);
     var userId = 23641860;
     //var userId = 965487;
     var cacheFileName = "./cache/" + userId + ".json";
@@ -27,6 +29,8 @@ exports.aleshru = function (req, res){
 
             if (json) {
                 res.send(images);
+            } else if (xml) {
+                res.send(jsonxml({ "photos": images }, { "escape": true }));
             } else {
                 res.render("aleshru", { "images": images, "tag": tag });
             }
